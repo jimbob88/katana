@@ -32,6 +32,7 @@
 If you want to generate the accessor function database yourself, you can use the provided Docker container, which will place the output files in an `output/` directory:
 
     docker build -t build-kernel .                # This takes quite some time
+    mkdir output
     ./build-kernel.sh --def v4.17.19
     ./build-kernel.sh --def --gcc 4.8 v3.9.11     # Build with GCC 4.8 for kernels that do not support GCC 5 or 6
 
@@ -44,10 +45,10 @@ We developed this tool on an up-to-date ArchLinux.
  - gcc (with plugin headers)
  - docker
  - python (>= 3.8)
-   - python bindings for capstone and unicorn
+   - python bindings for capstone and unicorn==2.0.0
    - pyelftools
    - hexdump
    - numpy
    - sympy
- - ghidra
+ - ghidra (10.0)
 
